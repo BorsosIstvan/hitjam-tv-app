@@ -2,14 +2,14 @@ name: PWA to APK Felhős Build
 
 on:
   push:
-    branches: [ main, master ] # Amikor feltolod a kódot GitHubra, azonnal elindul
+    branches: [ main, master ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Kijavítva a hibás runs-react szintaxis!
+    runs-on: ubuntu-24.04 # Fixen rögzítjük a stabil Ubuntu verziót a breaking change-ek elkerülésére
     steps:
       - name: Kód letöltése
-        uses: actions/checkout@v4 # Frissítve a legújabb Node-kompatibilis verzióra
+        uses: actions/checkout@v4
 
       - name: Java 17 Beállítása
         uses: actions/setup-java@v4
@@ -25,12 +25,13 @@ jobs:
         with:
           node-version: 18
 
-      - name: APK Legenerálása a felhőben (Linux alatt)
+      - name: APK Legenerálása a felhőben (Hivatalos npm csomaggal)
         run: |
-          npx github:trycua/pwa2apk https://hitjamparty.com --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
+          # A hivatalos Microsoft-ágon futtatjuk a fordítást, ami engedélyezett a felhőben
+          npx @pwabuilder/pwa2apk https://hitjamparty.com --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
 
       - name: Kész APK mentése letölthető fájlként
-        uses: actions/upload-artifact@v4 # Frissítve v4-re, így villámgyors lesz a letöltés
+        uses: actions/upload-artifact@v4
         with:
           name: HitJam-Radio-TV-APK
           path: ./hitjam-radio.apk
