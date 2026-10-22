@@ -6,13 +6,13 @@ on:
 
 jobs:
   build:
-    runs-react: ubuntu-latest
+    runs-on: ubuntu-latest # Kijavítva a hibás runs-react szintaxis!
     steps:
       - name: Kód letöltése
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Frissítve a legújabb Node-kompatibilis verzióra
 
       - name: Java 17 Beállítása
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -21,16 +21,16 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Node.js Beállítása
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: APK Legenerálása a felhőben (Linux alatt)
         run: |
-          npx github:trycua/pwa2apk https://radio.hitjamparty.com/manifest.webmanifest --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
+          npx github:trycua/pwa2apk https://hitjamparty.com --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
 
       - name: Kész APK mentése letölthető fájlként
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # Frissítve v4-re, így villámgyors lesz a letöltés
         with:
           name: HitJam-Radio-TV-APK
           path: ./hitjam-radio.apk
