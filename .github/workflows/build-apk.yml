@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    env:
+      # Kikényszerítjük a GitHub futtatóján a Node.js 24 használatát a figyelmeztetések elkerülésére
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Kód letöltése
         uses: actions/checkout@v4
@@ -17,20 +20,21 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Node.js Beállítása (Modern v4)
+      - name: Node.js 24 Beállítása (A legfrissebb Node verzió)
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
-      - name: APK Legenerálása a felhőben (Előre telepített gyári SDK használatával)
+      - name: APK Legenerálása a felhőben (Node 24 környezetben)
         env:
           ANDROID_HOME: /usr/lib/android/sdk
+          ANDROID_SDK_ROOT: /usr/lib/android/sdk
         run: |
-          # Elfogadjuk a licencszerződéseket az előre telepített SDK-hoz
-          yes | sdkmanager --licenses
+          # Automatikusan elfogadjuk az Android licencszerződéseket az előre telepített SDK-hoz
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
           
-          # Futtatjuk a csomagolót a gyári tiszta környezetben
-          npx github:trycua/pwa2apk https://hitjamparty.com --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
+          # Futtatjuk a csomagolót a tiszta Node 24-es felhős környezetben
+          npx github:trycua/pwa2apk https://radio.hitjamparty.com/manifest.webmanifest --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
 
       - name: Kész APK mentése letölthető fájlként
         uses: actions/upload-artifact@v4
