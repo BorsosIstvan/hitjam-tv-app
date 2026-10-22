@@ -6,29 +6,31 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04 # Fixen rögzítjük a stabil Ubuntu verziót a breaking change-ek elkerülésére
+    runs-on: ubuntu-24.04
     steps:
       - name: Kód letöltése
         uses: actions/checkout@v4
 
-      - name: Java 17 Beállítása
-        uses: actions/setup-java@v4
+      - name: Java 17 Beállítása (Legújabb v5)
+        uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Android SDK Beállítása
-        uses: android-actions/setup-android@v3
-
-      - name: Node.js Beállítása
+      - name: Node.js Beállítása (Modern v4)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
-      - name: APK Legenerálása a felhőben (Hivatalos npm csomaggal)
+      - name: APK Legenerálása a felhőben (Előre telepített gyári SDK használatával)
+        env:
+          ANDROID_HOME: /usr/lib/android/sdk
         run: |
-          # A hivatalos Microsoft-ágon futtatjuk a fordítást, ami engedélyezett a felhőben
-          npx @pwabuilder/pwa2apk https://hitjamparty.com --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
+          # Elfogadjuk a licencszerződéseket az előre telepített SDK-hoz
+          yes | sdkmanager --licenses
+          
+          # Futtatjuk a csomagolót a gyári tiszta környezetben
+          npx github:trycua/pwa2apk https://hitjamparty.com --package com.hitjamradio.radiotv --output ./hitjam-radio.apk
 
       - name: Kész APK mentése letölthető fájlként
         uses: actions/upload-artifact@v4
