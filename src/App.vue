@@ -3,7 +3,7 @@
     <!-- Fejléc -->
     <header class="tv-header">
       <h1>HITJAM <span class="tv-badge">TV STORE</span></h1>
-      <p class="subtitle">Saját fejlesztésű Android TV alkalmazások letöltése</p>
+      <p class="subtitle">Saját fejlesztésű Android TV alkalmazások letöltése V1.0.0</p>
     </header>
 
     <!-- Fő tartalom -->
