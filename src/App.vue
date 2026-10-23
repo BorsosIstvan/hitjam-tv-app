@@ -19,11 +19,11 @@
         <!-- A TV-BARÁT LETÖLTŐ GOMB -->
         <a 
           ref="downloadButton"
-          href="./hitjam-radio.apk" 
-          download="hitjam-radio.apk"
+          href="./PyClip.apk" 
+          download="PyClip.apk"
           class="tv-download-btn"
         >
-          📥 TELEPÍTÉS (APK LETÖLTÉSE)
+          📥 TELEPÍTÉS (PyClip.apk LETÖLTÉSE)
         </a>
       </div>
     </main>
