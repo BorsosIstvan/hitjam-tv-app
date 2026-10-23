@@ -19,8 +19,8 @@
         <!-- A TV-BARÁT LETÖLTŐ GOMB -->
         <a 
           ref="downloadButton"
-          href="./PyClip.apk" 
-          download="PyClip.apk"
+          href="./EcuTweaker.apk" 
+          download="EcuTweaker.apk"
           class="tv-download-btn"
         >
           📥 TELEPÍTÉS (PyClip.apk LETÖLTÉSE)
