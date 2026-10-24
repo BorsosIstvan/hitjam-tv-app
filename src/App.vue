@@ -23,7 +23,7 @@
           download="app-debug.apk"
           class="tv-download-btn"
         >
-          📥 TELEPÍTÉS (PyClip.apk LETÖLTÉSE)
+          📥 TELEPÍTÉS (APK LETÖLTÉSE)
         </a>
       </div>
     </main>
