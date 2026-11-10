@@ -1,13 +1,65 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hitjam-tv-app</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HitJam Store</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .store-container {
+            text-align: center;
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            border: 2px solid #333;
+        }
+        h1 {
+            color: #ff4500;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #ff4500;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #ff4500;
+            transition: all 0.2s ease;
+        }
+        .download-btn:focus, .download-btn:hover {
+            background-color: #ff5714;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff4500;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="store-container">
+        <h1>HitJam Store</h1>
+        <p>Töltsd le a legfrissebb natív Android TV alkalmazást</p>
+        <!-- Az APK-t relatív útvonallal linkeljük, így a weboldal mellett lakik -->
+        <a href="hitjamtv.apk" class="download-btn" autofocus>Alkalmazás Letöltése (APK)</a>
+    </div>
+</body>
 </html>
