@@ -4,21 +4,21 @@
     "name": "M1 HD",
     "genre": "Hírek",
     "logo": "📺",
-    "payload": "https://c201-node61-cdn.connectmedia.hu/110301/e475b5226d338c8b2eb3b9d0e6bdd778/6af3619f/index.m3u8"
+    "payload": "https://c202-node62-cdn.connectmedia.hu/110301/a6b119bf4da680a1323674150749d3e7/6af60a46/index.m3u8"
   },
   {
     "id": "m2",
     "name": "M2",
     "genre": "Gyerek",
     "logo": "🎈",
-    "payload": "https://c402-node62-cdn.connectmedia.hu/110302/10cdfae4bad5ae9225e08db12b9f6a56/6af361ef/index.m3u8"
+    "payload": "https://c401-node62-cdn.connectmedia.hu/110302/923b8c1ec75ac7c548d853f14f7e5ed5/6af60aa3/index.m3u8"
   },
     {
     "id": "m5",
     "name": "M5",
     "genre": "Kultúra és oktatás",
     "logo": "🎭",
-    "payload": "https://c402-node61-cdn.connectmedia.hu/110305/baab752ce1dabe13b3bc0fb9f2ad5ce1/6af3623d/index.m3u8"
+    "payload": "https://c402-node62-cdn.connectmedia.hu/110305/9f8720966d732127fdb1cf7d4ac96a02/6af60ad7/index.m3u8"
   },
     {
     "id": "atv_belgium",
@@ -32,7 +32,7 @@
     "name": "RTL",
     "genre": "Országos főműsoridős show-műsorok, sorozatok és híradó",
     "logo": "🔴",
-    "payload": "https://stream.y5.hu/stream/stream_rtl_hirado/stream.m3u8"
+    "payload": "https://s5nl2.ppgw2.dediproxy.com:38443/p2p/hl01/chunks.m3u8?nimblesessionid=10121996&wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTIvMjAyNiA2OjU1OjEzIFBNJmhhc2hfdmFsdWU9ekYvYUdWbE03YU9OWWxZSER4dGtMdz09JnZhbGlkbWludXRlcz0yJmlkPTg5LjM1LjM0Ljc5LXBsYXk0eW91LmxpdmVzdHJlYW1saW5rcy5uZXQtMTc5NDUwOTcxMy1Nb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTU3LjAuMC4wIFNhZmFyaS81MzcuMzY="
   },
   {
     "id": "galaxy4",
@@ -60,14 +60,14 @@
     "name": "Duna World / M4+",
     "genre": "Kulturális műsorok és hétvégi extra sportközvetítések",
     "logo": "🏟️",
-    "payload": "https://c202-node61-cdn.connectmedia.hu/110306/f95ad59822cd41887edd6e7226e0737b/6af1ec15/index.m3u8"
+    "payload": "https://c402-node62-cdn.connectmedia.hu/110306/744972a296d1e25f4364a6938d796c11/6af60b19/index.m3u8"
   },
   {
     "id": "film_plus",
     "name": "Film+",
     "genre": "Sikerfilmek, akciófilmek és kasszasikerek egész nap",
     "logo": "🎬",
-    "payload": "https://cdn.mediaklikk.org:2082/max4_0YjMxkTMxETM.m3u8"
+    "payload": "https://s5nl2.ppgw2.dediproxy.com:38443/p2p/hl3010/chunks.m3u8?nimblesessionid=10122120&wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTIvMjAyNiA2OjU2OjM0IFBNJmhhc2hfdmFsdWU9S2hQNEUyUVlDbkNCdll5SDdyOFJ5dz09JnZhbGlkbWludXRlcz0yJmlkPTg5LjM1LjM0Ljc5LXBsYXk0eW91LmxpdmVzdHJlYW1saW5rcy5uZXQtMTc5NDUwOTc5NC1Nb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTU3LjAuMC4wIFNhZmFyaS81MzcuMzY="
   },
   {
     "id": "rtl_gold",
