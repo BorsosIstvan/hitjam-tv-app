@@ -49,11 +49,11 @@
     "payload": "https://video11.videa.hu/static/live/8.3754346.2530409.1.0.1.1/index.m3u8"
   },
   {
-    "id": "duna_world",
-    "name": "Duna World",
+    "id": "duna",
+    "name": "Duna",
     "genre": "Kulturális és információs műsorok a világ magyarságának",
     "logo": "🌍",
-    "payload": "https://c801-node63-cdn.connectmedia.hu/110303/76a590f08260cff80d1dc8bae0e54297/6af1eaf8/index.m3u8"
+    "payload": "https://c801-node63-cdn.connectmedia.hu/110303/c40a9de60e75dfb9814cb0e551f4047e/6af5d53e/index.m3u8"
   },
   {
     "id": "duna_world_m4_plus",
