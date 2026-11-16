@@ -97,7 +97,7 @@
         }
 
         async function loadApksFromGitHub() {
-            const apiUrl = `https://github.com{GITHUB_USER}/${GITHUB_REPO}/contents/${FOLDER_PATH}`;
+            const apiUrl = `https://{GITHUB_USER}github.io/${GITHUB_REPO}/${FOLDER_PATH}`;
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error("API hiba");
