@@ -24,7 +24,8 @@
         // === BEÁLLÍTÁSOK ===
         const GITHUB_USER = "borsosistvan";
         const GITHUB_REPO = "hitjam-tv-app";
-        const FOLDER_PATH = ""; // Ha a főkönyvtárban vannak az APK-k, írd át erre: ""
+        const BRANCH_NAME = "gh-pages"; // A branch neve, ahol az index.html és az APK-k vannak
+        const FOLDER_PATH = "";         // Üres, mert az APK-k közvetlenül az index.html mellett vannak
 
         // Opcionális leírások és ikonok az ismert fájlnevekhez
         const APP_DETAILS = {
@@ -40,10 +41,10 @@
             }
         };
 
-        // Tartalék lista, ha nem GitHub Pages-ről fut az oldal
+        // Tartalék lista, ha az API elérhetetlen (itt sincs public/ előtag, mert mellette vannak)
         const FALLBACK_APPS = [
-            { name: "hitjamtv.apk", size: 0, url: "public/hitjamtv.apk" },
-            { name: "hitjamtvauto.apk", size: 0, url: "public/hitjamtvauto.apk" }
+            { name: "hitjamtv.apk", size: 0, url: "hitjamtv.apk" },
+            { name: "hitjamtvauto.apk", size: 0, url: "hitjamtvauto.apk" }
         ];
 
         function formatBytes(bytes) {
@@ -91,36 +92,34 @@
                 grid.appendChild(card);
             });
 
-            // Automatikus fókusz az első kártyára TV távirányítóhoz
             const firstCard = grid.querySelector(".app-card");
             if (firstCard) firstCard.focus();
         }
 
         async function loadApksFromGitHub() {
-            const apiUrl = `https://${GITHUB_USER}.github.io/${GITHUB_REPO}/${FOLDER_PATH}`;
+            // FONTOS: Itt az ://github.com címet kell használni, a gh-pages ággal!
+            const apiUrl = `https://://github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FOLDER_PATH}?ref=${BRANCH_NAME}`;
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error("API hiba");
                 const files = await response.json();
 
-                // Kiszűrjük az összes .apk fájlt
                 const apkFiles = files
                     .filter(file => file.name.toLowerCase().endsWith(".apk"))
                     .map(file => ({
                         name: file.name,
                         size: file.size,
-                        // Relatív útvonal a gyors letöltéshez
                         url: FOLDER_PATH ? `${FOLDER_PATH}/${file.name}` : file.name
                     }));
 
                 renderApps(apkFiles, `${apkFiles.length} elérhető alkalmazás`);
             } catch (error) {
-                // Ha helyi gépen vagy nem GitHub-on nyitod meg, betölti a tartalék listát
                 renderApps(FALLBACK_APPS, "Helyi lista");
             }
         }
 
         loadApksFromGitHub();
     </script>
+
 </body>
 </html>
